@@ -1,0 +1,49 @@
+{
+  "generated": "2025-11-14",
+  "jmhVersion": "1.37",
+  "jdk": "25.0.4.1",
+  "options": "-wi 3 -i 5 -r 500ms -f 1 -threads 1",
+  "unit": "ops/s",
+  "benchmarks": [
+    {
+      "id": "cancelOpenOrder",
+      "label": "Cancel open order",
+      "score": 37800365.747,
+      "error99": 3736946.313,
+      "min": 36532159.938,
+      "max": 38985975.631
+    },
+    {
+      "id": "singleLevelMatch",
+      "label": "Single-level match",
+      "score": 4226884.277,
+      "error99": 2918842.842,
+      "min": 3079743.813,
+      "max": 5001773.699
+    },
+    {
+      "id": "multiLevelMatch",
+      "label": "Multi-level match (qty 3)",
+      "score": 3938712.482,
+      "error99": 2319426.207,
+      "min": 2980977.157,
+      "max": 4617788.816
+    },
+    {
+      "id": "snapshotDepth15",
+      "label": "Snapshot depth 15",
+      "score": 3775779.041,
+      "error99": 3888705.669,
+      "min": 2849973.316,
+      "max": 4852497.268
+    },
+    {
+      "id": "restingSubmit",
+      "label": "Resting limit submit",
+      "score": 2273166.255,
+      "error99": 2497645.302,
+      "min": 1714083.987,
+      "max": 3080009.897
+    }
+  ]
+}

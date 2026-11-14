@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" width="920" height="420" role="img" aria-labelledby="title desc">
+<title id="title">JMH throughput — HFT order book</title>
+<desc id="desc">Horizontal bar chart of benchmark operations per second.</desc>
+<rect width="920" height="420" fill="#0f172a"/>
+<text x="24" y="36" fill="#f8fafc" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">JMH throughput (ops/s)</text>
+<text x="24" y="56" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="12">JDK 25.0.4.1 · JMH 1.37 · -wi 3 -i 5 -r 500ms -f 1 -threads 1</text>
+<line x1="220" y1="72" x2="220" y2="352" stroke="#334155" stroke-width="1"/>
+<text x="220" y="374" text-anchor="middle" fill="#64748b" font-family="Segoe UI, system-ui, sans-serif" font-size="11">0</text>
+<line x1="385" y1="72" x2="385" y2="352" stroke="#334155" stroke-width="1"/>
+<text x="385" y="374" text-anchor="middle" fill="#64748b" font-family="Segoe UI, system-ui, sans-serif" font-size="11">10.21M</text>
+<line x1="550" y1="72" x2="550" y2="352" stroke="#334155" stroke-width="1"/>
+<text x="550" y="374" text-anchor="middle" fill="#64748b" font-family="Segoe UI, system-ui, sans-serif" font-size="11">20.41M</text>
+<line x1="715" y1="72" x2="715" y2="352" stroke="#334155" stroke-width="1"/>
+<text x="715" y="374" text-anchor="middle" fill="#64748b" font-family="Segoe UI, system-ui, sans-serif" font-size="11">30.62M</text>
+<line x1="880" y1="72" x2="880" y2="352" stroke="#334155" stroke-width="1"/>
+<text x="880" y="374" text-anchor="middle" fill="#64748b" font-family="Segoe UI, system-ui, sans-serif" font-size="11">40.82M</text>
+<text x="208" y="106" text-anchor="end" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Cancel open order</text>
+<rect x="220" y="84" width="611" height="32" rx="4" fill="#2563eb"/>
+<line x1="770.58552071202529467948536672" y1="100" x2="891.4144792879747053205146333" y2="100" stroke="#f8fafc" stroke-width="2" opacity="0.85"/>
+<text x="839" y="106" fill="#cbd5e1" font-family="ui-monospace, Consolas, monospace" font-size="12">37.80M ±3.74M</text>
+<text x="208" y="162" text-anchor="end" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Single-level match</text>
+<rect x="220" y="140" width="68" height="32" rx="4" fill="#0d9488"/>
+<line x1="240.81163932984171150926474305" y1="156" x2="335.18836067015828849073525695" y2="156" stroke="#f8fafc" stroke-width="2" opacity="0.85"/>
+<text x="296" y="162" fill="#cbd5e1" font-family="ui-monospace, Consolas, monospace" font-size="12">4.23M ±2.92M</text>
+<text x="208" y="218" text-anchor="end" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Multi-level match (qty 3)</text>
+<rect x="220" y="196" width="64" height="32" rx="4" fill="#7c3aed"/>
+<line x1="246.50229069245201343263076867" y1="212" x2="321.49770930754798656736923133" y2="212" stroke="#f8fafc" stroke-width="2" opacity="0.85"/>
+<text x="292" y="218" fill="#cbd5e1" font-family="ui-monospace, Consolas, monospace" font-size="12">3.94M ±2.32M</text>
+<text x="208" y="274" text-anchor="end" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Snapshot depth 15</text>
+<rect x="220" y="252" width="61" height="32" rx="4" fill="#ca8a04"/>
+<line x1="218.13205692050028653743473881" y1="268" x2="343.86794307949971346256526119" y2="268" stroke="#f8fafc" stroke-width="2" opacity="0.85"/>
+<text x="289" y="274" fill="#cbd5e1" font-family="ui-monospace, Consolas, monospace" font-size="12">3.78M ±3.89M</text>
+<text x="208" y="330" text-anchor="end" fill="#e2e8f0" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Resting limit submit</text>
+<rect x="220" y="308" width="37" height="32" rx="4" fill="#dc2626"/>
+<line x1="216.62105748175721039891273972" y1="324" x2="297.37894251824278960108726028" y2="324" stroke="#f8fafc" stroke-width="2" opacity="0.85"/>
+<text x="265" y="330" fill="#cbd5e1" font-family="ui-monospace, Consolas, monospace" font-size="12">2.27M ±2.50M</text>
+<text x="220" y="404" fill="#475569" font-family="Segoe UI, system-ui, sans-serif" font-size="11">Bars: mean throughput · whiskers: ±99.9% CI · 2025-11-14</text>
+</svg>

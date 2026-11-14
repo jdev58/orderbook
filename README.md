@@ -10,7 +10,7 @@ In-memory **price–time** limit order book with a matching engine, HTTP demo UI
 - **Maker price** on trades (resting order sets the trade price)
 - **Book structure:** `TreeMap` price levels + intrusive FIFO queues + Agrona `Long2ObjectHashMap` for order lookup
 - **Demo:** browser depth ladder, submit / cancel / replace, trade log
-- **Benchmarks:** JMH throughput suite (`-Pjmh` Maven profile)
+- **Benchmarks:** JMH throughput suite (`-Pjmh` Maven profile) — [charts below](#performance-jmh)
 
 ## Requirements
 
@@ -99,19 +99,38 @@ See **[FEATURES.md](FEATURES.md)** for:
 - 🚧 In progress / planned  
 - ❌ Out of scope for now  
 
-## Performance notes
+## Performance (JMH)
 
-JMH numbers are **environment-dependent** (JDK 25, CPU, `-f` forks). Use them to compare *this codebase over time*, not as exchange SLA.
+Single-threaded throughput from a local run (JDK 25.0.4.1, JMH 1.37). Numbers vary by CPU and JVM — use them to track **this repo over time**, not as exchange SLA. Source: [docs/performance-baseline.json](docs/performance-baseline.json).
 
-Rough baseline direction (throughput, single thread, forked JVM):
+<p align="center">
+  <img src="docs/jmh-throughput.svg" alt="JMH throughput: cancel, match, snapshot, and resting submit benchmarks in ops per second" width="720">
+</p>
 
-| Benchmark | Typical role |
-|-----------|----------------|
-| `restingSubmit` | Limit add to empty/spread book |
-| `singleLevelMatch` | 1-lot match at one price |
-| `multiLevelMatch` | Small taker across levels |
-| `cancelOpenOrder` | Cancel (note: micro-benchmark setup) |
-| `snapshotDepth15` | Depth-15 snapshot on seeded book |
+<p align="center">
+  <img src="docs/jmh-relative.svg" alt="Relative throughput compared to resting limit submit" width="720">
+</p>
+
+<p align="center">
+  <img src="docs/architecture-hot-path.svg" alt="Simplified matching hot path and in-memory book structures" width="720">
+</p>
+
+| Benchmark | ~Throughput | Role |
+|-----------|-------------|------|
+| `cancelOpenOrder` | **37.8M** ops/s | Cancel resting order (micro-benchmark setup) |
+| `singleLevelMatch` | **4.2M** ops/s | 1-lot match at one price |
+| `multiLevelMatch` | **3.9M** ops/s | Small taker across levels |
+| `snapshotDepth15` | **3.8M** ops/s | Depth-15 snapshot on seeded book |
+| `restingSubmit` | **2.3M** ops/s | Limit add (book grows over trial) |
+
+Regenerate charts after a new run:
+
+```bash
+mvn -Pjmh package -DskipTests
+java -jar target/benchmarks.jar -wi 3 -i 5 -r 500ms -f 1 -rf json -rff target/jmh-results.json
+# Update docs/performance-baseline.json, then:
+powershell -File scripts/generate-performance-charts.ps1
+```
 
 ## Dependencies
 

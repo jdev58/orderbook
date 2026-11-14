@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="920" height="380" role="img" aria-labelledby="title2">
+<title id="title2">Relative benchmark throughput</title>
+<rect width="920" height="380" fill="#fafafa"/>
+<text x="24" y="36" fill="#0f172a" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="600">Relative throughput (× vs resting submit)</text>
+<text x="24" y="56" fill="#64748b" font-family="Segoe UI, system-ui, sans-serif" font-size="12">Normalized to slowest scenario in this suite</text>
+<text x="228" y="100" text-anchor="end" fill="#334155" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Cancel open order</text>
+<rect x="240" y="80" width="609.52380952380894581722471392" height="28" rx="3" fill="#2563eb" opacity="1"/>
+<text x="857.5238095238089458172247139" y="100" fill="#0f172a" font-family="ui-monospace, Consolas, monospace" font-size="12">16.6×</text>
+<text x="228" y="152" text-anchor="end" fill="#334155" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Single-level match</text>
+<rect x="240" y="132" width="68.157716361191676891952315200" height="28" rx="3" fill="#2563eb" opacity="0.88"/>
+<text x="316.15771636119167689195231520" y="152" fill="#0f172a" font-family="ui-monospace, Consolas, monospace" font-size="12">1.9×</text>
+<text x="228" y="204" text-anchor="end" fill="#334155" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Multi-level match (qty 3)</text>
+<rect x="240" y="184" width="63.511000203434442496920636992" height="28" rx="3" fill="#2563eb" opacity="0.76"/>
+<text x="311.51100020343444249692063699" y="204" fill="#0f172a" font-family="ui-monospace, Consolas, monospace" font-size="12">1.7×</text>
+<text x="228" y="256" text-anchor="end" fill="#334155" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Snapshot depth 15</text>
+<rect x="240" y="236" width="60.883729019821260720428900224" height="28" rx="3" fill="#2563eb" opacity="0.64"/>
+<text x="308.88372901982126072042890022" y="256" fill="#0f172a" font-family="ui-monospace, Consolas, monospace" font-size="12">1.7×</text>
+<text x="228" y="308" text-anchor="end" fill="#334155" font-family="Segoe UI, system-ui, sans-serif" font-size="13">Resting limit submit</text>
+<rect x="240" y="288" width="36.654379608444253410345939072" height="28" rx="3" fill="#2563eb" opacity="0.52"/>
+<text x="284.65437960844425341034593907" y="308" fill="#0f172a" font-family="ui-monospace, Consolas, monospace" font-size="12">1.0×</text>
+<text x="24" y="364" fill="#94a3b8" font-family="Segoe UI, system-ui, sans-serif" font-size="11">Baseline: resting limit submit = 1.0× · 2025-11-14</text>
+</svg>
